@@ -45,22 +45,12 @@ def get_action(current_state, possible_actions,):
         estimated_rewards = []
         for possible_action in possible_actions:
             estimated_rewards.append(q[current_state][possible_action])
-        # print(possible_actions)
-        # print(estimated_rewards)
         ers = np.argwhere(estimated_rewards == np.amax(estimated_rewards))
-        # print(ers)
         er = random.choice(ers)
-        # actions = np.argwhere(q[current_state] == np.amax(q[current_state]))
         action = (current_state, possible_actions[er[0]])
-        # print("Normal")
-        # print(action)
-        # raw_input()
 
     else:
         action = (current_state, random.choice(possible_actions))
-        # print("Random")
-        # print(action)
-        # raw_input()
 
     return action
 
